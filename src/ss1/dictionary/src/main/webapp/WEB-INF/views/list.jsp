@@ -10,12 +10,16 @@
 <html>
 <head>
     <title>Title</title>
+
 </head>
 <body>
+<div style="margin-left: 750px">
+<h1 style="margin-left: 70px">Từ Điển</h1>
+<table style="border: 2px solid;">
 <form action="" method="post">
     <tr>
         <td>English</td>
-        <td><input type="text" name="word"></td>
+        <td><input type="text" name="word" value="${saveword}"></td>
     </tr>
 
     <br>
@@ -30,5 +34,7 @@
         <td><input type="submit" name="convert"></td>
     </tr>
 </form>
+</table>
+</div>
 </body>
 </html>

@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class DictionaryController {
     @Autowired
-    private IDictionaryService servicee;
+    private IDictionaryService service;
 
     @GetMapping
     public String showForm(){
@@ -24,7 +24,7 @@ public class DictionaryController {
     public ModelAndView search(Model model, @RequestParam String word){
         model.addAttribute("saveword",word);
 
-        return new ModelAndView("list","vietnamese", servicee.search(word));
+        return new ModelAndView("list","vietnamese", service.search(word));
 
     }
 }

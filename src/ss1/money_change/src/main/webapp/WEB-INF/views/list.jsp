@@ -12,6 +12,9 @@
     <title>Title</title>
 </head>
 <body>
+<h2>Chuyển Đổi Tiền Tệ</h2>
+<table style="border: 10px ">
+
 <form action="" method="post">
     <tr>
         <td>USD</td>
@@ -33,5 +36,6 @@
         </td>
     </tr>
 </form>
+</table>
 </body>
 </html>
