@@ -27,7 +27,7 @@ public class SettingController {
     public String showForm(@PathVariable int id, Model model) {
         model.addAttribute("setting", settingsService.findById(id));
         model.addAttribute("languagesList", settingsService.finAllLanguages());
-        model.addAttribute("pageSize", settingsService.finAllPageSize());
+        model.addAttribute("pageSizeList", settingsService.finAllPageSize());
 
         return "update";
     }
@@ -36,6 +36,6 @@ public class SettingController {
     public String saveSettings(@ModelAttribute Settings settings, RedirectAttributes redirectAttributes) {
         settingsService.update(settings);
         redirectAttributes.addFlashAttribute("mess", "Chỉnh sửa thành công");
-        return "redirect:/home";
+        return "redirect:/";
     }
 }

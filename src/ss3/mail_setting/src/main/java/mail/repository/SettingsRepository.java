@@ -25,10 +25,10 @@ public class SettingsRepository implements ISettingsRepository {
         size.add(50);
         size.add(100);
 
-        settingsList.add(new Settings(1,"English",5,"Hi","Hoang"));
-        settingsList.add(new Settings(2,"Vietnamese",10,"Hi","Hoang"));
-        settingsList.add(new Settings(3,"Japanese",25,"Hi","Hoang"));
-        settingsList.add(new Settings(4,"Chinese",50,"Hi","Hoang"));
+        settingsList.add(new Settings(1,"English",5,true,"Hoang"));
+        settingsList.add(new Settings(2,"Vietnamese",10,true,"Hoang"));
+        settingsList.add(new Settings(3,"Japanese",25,false,"Hoang"));
+        settingsList.add(new Settings(4,"Chinese",50,true,"Hoang"));
     }
 
     @Override
@@ -53,7 +53,7 @@ public class SettingsRepository implements ISettingsRepository {
                 setting.setLanguages(settings.getLanguages());
                 setting.setPageSize(settings.getPageSize());
                 setting.setSignature(settings.getSignature());
-                setting.setSpamsFilter(settings.getSpamsFilter());
+                setting.setSpamsFilter(settings.isSpamsFilter());
                 return;
             }
         }

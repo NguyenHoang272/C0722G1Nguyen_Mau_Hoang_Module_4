@@ -19,51 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78efce12-0117-4fc2-8e8c-1516ec8824c6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/caculator/controller/CaculatorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/caculator/service/CalculatorService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/caculator/service/ICalculatorService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/calculator.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../condiment_sandwich/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../condiment_sandwich/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../condiment_sandwich/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../condiment_sandwich/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../condiment_sandwich/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../condiment_sandwich/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../condiment_sandwich/src/main/java/condiment/controller/CondimentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../condiment_sandwich/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../condiment_sandwich/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../condiment_sandwich/src/main/webapp/WEB-INF/views/list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../condiment_sandwich/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1/dictionary/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1/dictionary/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1/dictionary/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1/dictionary/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1/dictionary/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1/dictionary/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1/dictionary/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1/dictionary/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1/dictionary/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1/dictionary/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1/dictionary/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1/dictionary/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1/dictionary/build/libs/dictionary-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1/dictionary/build/libs/dictionary-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1/dictionary/src/main/java/dictionary/controller/DictionaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1/dictionary/src/main/java/dictionary/controller/DictionaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1/dictionary/src/main/webapp/WEB-INF/views/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1/dictionary/src/main/webapp/WEB-INF/views/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1/money_change/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1/money_change/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1/money_change/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1/money_change/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1/money_change/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1/money_change/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1/money_change/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1/money_change/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1/money_change/.gradle/6.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1/money_change/.gradle/6.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1/money_change/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1/money_change/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1/money_change/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1/money_change/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1/money_change/build/classes/java/main/money_conversion/controller/ConversionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1/money_change/build/classes/java/main/money_conversion/controller/ConversionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1/money_change/build/libs/money_change-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1/money_change/build/libs/money_change-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1/money_change/src/main/webapp/WEB-INF/views/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1/money_change/src/main/webapp/WEB-INF/views/list.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="78efce12-0117-4fc2-8e8c-1516ec8824c6" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -196,7 +152,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669003622871</updated>
-      <workItem from="1669003627713" duration="11002000" />
+      <workItem from="1669003627713" duration="11599000" />
     </task>
     <servers />
   </component>
@@ -231,54 +187,54 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1669008225662" />
-    <state width="845" height="163" key="GridCell.Tab.0.bottom" timestamp="1669012674138">
+    <state width="845" height="163" key="GridCell.Tab.0.bottom" timestamp="1669025596478">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="845" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1669012674138" />
-    <state width="845" height="163" key="GridCell.Tab.0.center" timestamp="1669012674138">
+    <state width="845" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1669025596478" />
+    <state width="845" height="163" key="GridCell.Tab.0.center" timestamp="1669025596478">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="845" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1669012674138" />
-    <state width="845" height="163" key="GridCell.Tab.0.left" timestamp="1669012674138">
+    <state width="845" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1669025596478" />
+    <state width="845" height="163" key="GridCell.Tab.0.left" timestamp="1669025596478">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="845" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1669012674138" />
-    <state width="845" height="163" key="GridCell.Tab.0.right" timestamp="1669012674138">
+    <state width="845" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1669025596478" />
+    <state width="845" height="163" key="GridCell.Tab.0.right" timestamp="1669025596478">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="845" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1669012674138" />
-    <state width="845" height="163" key="GridCell.Tab.1.bottom" timestamp="1669012674076">
+    <state width="845" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1669025596478" />
+    <state width="845" height="163" key="GridCell.Tab.1.bottom" timestamp="1669025596478">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="845" height="163" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1669012674076" />
-    <state width="845" height="163" key="GridCell.Tab.1.center" timestamp="1669012674076">
+    <state width="845" height="163" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1669025596478" />
+    <state width="845" height="163" key="GridCell.Tab.1.center" timestamp="1669025596478">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="845" height="163" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1669012674076" />
-    <state width="845" height="163" key="GridCell.Tab.1.left" timestamp="1669012674076">
+    <state width="845" height="163" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1669025596478" />
+    <state width="845" height="163" key="GridCell.Tab.1.left" timestamp="1669025596478">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="845" height="163" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1669012674076" />
-    <state width="845" height="163" key="GridCell.Tab.1.right" timestamp="1669012674076">
+    <state width="845" height="163" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1669025596478" />
+    <state width="845" height="163" key="GridCell.Tab.1.right" timestamp="1669025596478">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="845" height="163" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1669012674076" />
-    <state width="845" height="163" key="GridCell.Tab.2.bottom" timestamp="1669012674076">
+    <state width="845" height="163" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1669025596478" />
+    <state width="845" height="163" key="GridCell.Tab.2.bottom" timestamp="1669025596478">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="845" height="163" key="GridCell.Tab.2.bottom/0.0.1280.680@0.0.1280.680" timestamp="1669012674076" />
-    <state width="845" height="163" key="GridCell.Tab.2.center" timestamp="1669012674076">
+    <state width="845" height="163" key="GridCell.Tab.2.bottom/0.0.1280.680@0.0.1280.680" timestamp="1669025596478" />
+    <state width="845" height="163" key="GridCell.Tab.2.center" timestamp="1669025596478">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="845" height="163" key="GridCell.Tab.2.center/0.0.1280.680@0.0.1280.680" timestamp="1669012674076" />
-    <state width="845" height="163" key="GridCell.Tab.2.left" timestamp="1669012674076">
+    <state width="845" height="163" key="GridCell.Tab.2.center/0.0.1280.680@0.0.1280.680" timestamp="1669025596478" />
+    <state width="845" height="163" key="GridCell.Tab.2.left" timestamp="1669025596478">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="845" height="163" key="GridCell.Tab.2.left/0.0.1280.680@0.0.1280.680" timestamp="1669012674076" />
-    <state width="845" height="163" key="GridCell.Tab.2.right" timestamp="1669012674076">
+    <state width="845" height="163" key="GridCell.Tab.2.left/0.0.1280.680@0.0.1280.680" timestamp="1669025596478" />
+    <state width="845" height="163" key="GridCell.Tab.2.right" timestamp="1669025596478">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="845" height="163" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1669012674076" />
+    <state width="845" height="163" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1669025596478" />
     <state x="91" y="0" key="new project wizard" timestamp="1669008208162">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

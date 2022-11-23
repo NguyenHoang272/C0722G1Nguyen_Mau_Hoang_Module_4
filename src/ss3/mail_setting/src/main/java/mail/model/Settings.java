@@ -1,19 +1,20 @@
 package mail.model;
 
-import java.util.List;
-
 public class Settings {
     private int id;
+
     private String languages;
+
     private Integer pageSize;
-    private String spamsFilter;
+
+    private boolean spamsFilter;
+
     private String signature;
 
     public Settings() {
-
     }
 
-    public Settings(int id, String languages, Integer pageSize, String spamsFilter, String signature) {
+    public Settings(int id, String languages, Integer pageSize, boolean spamsFilter, String signature) {
         this.id = id;
         this.languages = languages;
         this.pageSize = pageSize;
@@ -29,14 +30,6 @@ public class Settings {
         this.id = id;
     }
 
-    public Integer getPageSize() {
-        return pageSize;
-    }
-
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
-    }
-
     public String getLanguages() {
         return languages;
     }
@@ -45,11 +38,19 @@ public class Settings {
         this.languages = languages;
     }
 
-    public String getSpamsFilter() {
+    public Integer getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+    }
+
+    public boolean isSpamsFilter() {
         return spamsFilter;
     }
 
-    public void setSpamsFilter(String spamsFilter) {
+    public void setSpamsFilter(boolean spamsFilter) {
         this.spamsFilter = spamsFilter;
     }
 
@@ -60,6 +61,4 @@ public class Settings {
     public void setSignature(String signature) {
         this.signature = signature;
     }
-
-
 }

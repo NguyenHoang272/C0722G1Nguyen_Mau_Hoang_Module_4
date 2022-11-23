@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/conversion")
 public class ConversionController {
     @Autowired
-    private IConversionService servicee;
+    private IConversionService service;
 
     @GetMapping
     public String showForm(){
@@ -26,7 +26,7 @@ public class ConversionController {
         model.addAttribute("saveusd",usd);
         model.addAttribute("saverate",rate);
 
-        return new ModelAndView("list","vnd", servicee.change(usd,rate));
+        return new ModelAndView("list","vnd", service.change(usd,rate));
 
     }
 }
