@@ -12,7 +12,7 @@ public interface IPrductService {
     Product finById(int id);
     void update (int id, Product product);
     void remove(int id);
-    public List<Product> findByName(String name);
+    public List<Product> findByName(String nameSearch);
 
     List<Product> findByProducer(String producer);
 

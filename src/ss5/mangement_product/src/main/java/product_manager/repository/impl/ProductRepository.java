@@ -39,6 +39,22 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
+    public List<Product> findByName(String nameSearch) {
+        Session session = null;
+        List<Product> products= null;
+
+        try {
+            session = ConnectionUtil.sessionFactory.openSession();
+            products =  session.createQuery("from Product where name like :name").setParameter("name","%"+nameSearch+"%").getResultList();
+        }finally {
+            if (session != null){
+                session.close();
+            }
+        }
+        return products;
+    }
+
+    @Override
     public void save(Product product) {
         Session session = null;
         Transaction transaction = null;
@@ -69,6 +85,8 @@ public class ProductRepository implements IProductRepository {
         }
         return product;
     }
+
+
 
 
     @Override
@@ -116,10 +134,7 @@ public class ProductRepository implements IProductRepository {
         }
     }
 
-    @Override
-    public List<Product> findByName(String name) {
-        return null;
-    }
+
 
     @Override
     public List<Product> findByProducer(String producer) {

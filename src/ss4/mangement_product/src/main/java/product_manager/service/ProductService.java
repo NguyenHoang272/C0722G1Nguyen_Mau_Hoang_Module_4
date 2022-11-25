@@ -39,8 +39,8 @@ private IProductRepository iProductRepository;
     }
 
     @Override
-    public List<Product> findByName(String name) {
-        return iProductRepository.findByName(name);
+    public List<Product> findByName(String nameSearch) {
+        return iProductRepository.findByName(nameSearch);
     }
 
     @Override

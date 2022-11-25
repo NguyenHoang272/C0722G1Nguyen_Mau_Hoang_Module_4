@@ -16,8 +16,8 @@
 
  <a href="add.html" style="text-align: center">Add Product</a>
 
-<form  class="text-center">
-    <input type="text" name="nameSearch" placeholder="Enter product name">
+<form action="/search" class="text-center">
+    <input type="text" name="nameSearch" placeholder="Enter product name" th:value="${nameSearch}">
     <button type="submit"class="btn btn-secondary btn-sm">Search</button>
 </form>
 
@@ -43,7 +43,9 @@
         <td>
             <a th:href="@{/remove(id=${product.id})}">Delete</a>
         </td>
-        <td>Edit</td>
+        <td>
+            <a th:href="@{/update(id=${product.id})}">Edit</a>
+        </td>
     </tr>
     </tbody>
 </table>

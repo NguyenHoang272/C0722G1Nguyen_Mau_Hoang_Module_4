@@ -10,6 +10,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import product_manager.model.Product;
 import product_manager.repository.IProductRepository;
 
+import java.util.List;
+
 @Controller
 public class ProductController {
     @Autowired
@@ -53,5 +55,14 @@ public class ProductController {
         redirectAttributes.addFlashAttribute("mess","Successful edit!");
         return "redirect:/";
 
+    }
+
+    @GetMapping("/search")
+    String search(@RequestParam("nameSearch")  String nameSearch,Model model){
+
+        List<Product> productList = productService.findByName(nameSearch);
+        model.addAttribute("productList",productList);
+        model.addAttribute("nameSearch",nameSearch);
+        return "product/list";
     }
 }
