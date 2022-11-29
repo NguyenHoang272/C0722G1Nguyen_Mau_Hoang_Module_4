@@ -10,6 +10,9 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
+<h2 th:if="${message}">
+    <span th:text="${message}"></span>
+</h2>
 <a href="/create">Add new song</a>
 <table class="table">
     <thead class="table-light">
