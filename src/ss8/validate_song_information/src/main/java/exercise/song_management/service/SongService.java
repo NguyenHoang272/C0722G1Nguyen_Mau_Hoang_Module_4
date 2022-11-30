@@ -3,17 +3,18 @@ package exercise.song_management.service;
 import exercise.song_management.model.Song;
 import exercise.song_management.repository.ISongRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 
 @Service
 public class SongService implements ISongService{
     @Autowired
     private ISongRepository songRepository;
     @Override
-    public List<Song> finALl() {
-        return songRepository.findAll();
+    public Page<Song> finAll(Pageable pageable) {
+        return songRepository.findAll(pageable);
     }
 
     @Override

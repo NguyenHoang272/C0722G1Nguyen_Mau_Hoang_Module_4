@@ -1,10 +1,13 @@
 package exercise.song_management.dto;
 
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-public class SongDto {
+public class SongDto implements Validator {
 
     private Integer id;
 
@@ -63,5 +66,15 @@ public class SongDto {
 
     public void setKindOfMusic(String kindOfMusic) {
         this.kindOfMusic = kindOfMusic;
+    }
+
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return false;
+    }
+
+    @Override
+    public void validate(Object target, Errors errors) {
+        SongDto songDto = (SongDto) target;
     }
 }

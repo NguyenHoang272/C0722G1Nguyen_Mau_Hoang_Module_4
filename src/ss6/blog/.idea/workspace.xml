@@ -20,17 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="85c471c9-108c-46dc-a16b-8c71da7f2fa2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codegym/blog/model/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss6/blog/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss6/blog/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/BlogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/blog/model/Blog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/blog/model/Blog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/blog/repository/IBlogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/blog/repository/IBlogRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/blog/service/IBlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/blog/service/IBlogService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/blog/service/impl/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/blog/service/impl/BlogService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blog/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/blog/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blog/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/blog/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blog/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/blog/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blog/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/blog/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss8/validate_song_information/src/main/java/exercise/song_management/controller/SongController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss8/validate_song_information/src/main/java/exercise/song_management/controller/SongController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss8/validate_song_information/src/main/resources/templates/song/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss8/validate_song_information/src/main/resources/templates/song/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss8/validate_song_information/src/main/resources/templates/song/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss8/validate_song_information/src/main/resources/templates/song/edit.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +63,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../blog_app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ss4/mangement_product" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -102,6 +94,7 @@
       <workItem from="1669380341885" duration="4767000" />
       <workItem from="1669606372934" duration="3481000" />
       <workItem from="1669617055770" duration="10559000" />
+      <workItem from="1669778790753" duration="60000" />
     </task>
     <servers />
   </component>
@@ -129,10 +122,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="446" y="25" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1669618250558" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1669627279947">
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1669778849013">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1669627279947" />
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1669778849013" />
     <state width="1237" height="59" key="GridCell.Tab.0.bottom" timestamp="1669628206990">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
