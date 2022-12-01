@@ -32,21 +32,21 @@ public class BookOrderController {
     model.addAttribute("book",book);
     return "/book/oder_form";
 }
-//    @PostMapping("/order")
-//    public String order(@RequestParam Integer id, Model model) {
-//
-//        int otp = (int) (Math.random() * (99999 - 10000) + 10000);
-//        Book book = bookService.finById(id);
-//        String orderDate = String.valueOf(new Date(System.currentTimeMillis()));
-//
-//        BookOder bookOrder = new BookOder(otp, orderDate, book);
-//        oderService.save(bookOrder);
-//
-//        book.setStock(book.getStock() - 1);
-//        bookService.save(book);
-//
-//        model.addAttribute("message",
-//                "Successfully order! Your order OTP is: " + otp);
-//        return "book/notification";
-//    }
+    @PostMapping("/order")
+    public String order(@RequestParam Integer id, Model model) {
+
+        int otp = (int) (Math.random() * (99999 - 10000) + 10000);
+        Book book = bookService.finById(id);
+        String orderDate = String.valueOf(new Date(System.currentTimeMillis()));
+
+        BookOder bookOrder = new BookOder(otp, orderDate, book);
+        oderService.save(bookOrder);
+
+        book.setStock(book.getStock() - 1);
+        bookService.save(book);
+
+        model.addAttribute("message",
+                "Successfully order! Your order OTP is: " + otp);
+        return "book/notification";
+    }
 }
