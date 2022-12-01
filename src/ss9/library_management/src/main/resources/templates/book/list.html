@@ -12,6 +12,17 @@
 <body>
 <h1 style="text-align: center">List Book</h1>
 
+</div>
+<div class="col-sm-6">
+    <form action="/book/return" novalidate="novalidate">
+        <div class="search-box">
+            <input type="text" name="otp" placeholder="..OTP..">
+        </div>
+        <button class="btn btn-success" type="submit">Return
+
+        </button>
+    </form>
+</div>
 <h2 th:if="${message}">
     <span th:text="${message}"></span>
 </h2>

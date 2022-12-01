@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.Date;
 
@@ -48,5 +49,27 @@ public class BookOrderController {
         model.addAttribute("message",
                 "Successfully order! Your order OTP is: " + otp);
         return "book/notification";
+    }
+
+    @GetMapping("/return")
+    public String returnBook(@RequestParam int otp, RedirectAttributes redirect) {
+        BookOder bookOrder = oderService.finByOtp(otp);
+
+        String returnDate = String.valueOf(new Date(System.currentTimeMillis()));
+        bookOrder.setReturnDate(returnDate);
+        oderService.save(bookOrder);
+
+        Book book = bookOrder.getBook();
+        book.setStock(book.getStock() + 1);
+        bookService.save(book);
+
+        redirect.addFlashAttribute("message", "Return book successful! Thank you!");
+        return "redirect:/book";
+    }
+
+    @ExceptionHandler
+    public String handleException(Exception e, Model model) {
+        model.addAttribute("message", "OTP is invalid!");
+        return "error";
     }
 }
