@@ -36,5 +36,14 @@
     </tbody>
 </table>
 
+<div class="col-md-3" th:if="${historyProduct}">
+    <div class="card sticky-top border-0">
+        <img th:src="${historyProduct.imageUrl}" class="card-img-top">
+        <div class="card-body">
+            <h4 class="card-title" th:text="${historyProduct.name}"></h4>
+            <p class="card-text" th:text="${historyProduct.price}"></p>
+        </div>
+    </div>
+</div>
 </body>
 </html>
