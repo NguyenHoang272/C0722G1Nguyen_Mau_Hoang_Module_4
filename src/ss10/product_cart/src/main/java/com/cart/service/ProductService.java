@@ -12,19 +12,19 @@ import java.util.Optional;
 public class ProductService implements IProductService{
 
     @Autowired
-    private IProductRepository productRepository;
+    private IProductRepository iproductRepository;
     @Override
-    public List<Product> finAll() {
-        return productRepository.findAll();
+    public List<Product> findAll() {
+        return iproductRepository.findAll();
     }
 
     @Override
-    public Optional<Product> finById(Long id) {
-        return productRepository.findById(id);
+    public Optional<Product> findById(Integer id) {
+        return iproductRepository.findById(id);
     }
 
     @Override
     public void save(Product product) {
-        productRepository.save(product);
+        iproductRepository.save(product);
     }
 }

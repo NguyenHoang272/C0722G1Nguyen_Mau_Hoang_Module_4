@@ -3,7 +3,6 @@ package com.cart.controller;
 import com.cart.dto.CartDto;
 import com.cart.dto.ProductDto;
 import com.cart.model.Product;
-import com.cart.repository.IProductRepository;
 import com.cart.service.IProductService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,56 +16,65 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/product")
-@SessionAttributes("/cart")
+@RequestMapping("/shop")
+@SessionAttributes("cart")
 public class ProductController {
-    @Autowired
-    private IProductService productService;
-
     @ModelAttribute("cart")
     public CartDto initCart(){
         return new CartDto();
     }
 
-    @GetMapping("/add/{id}")
-    public String addToCart(@PathVariable Long id, @SessionAttribute("cart") CartDto cartDto){
-        Optional<Product> product = productService.finById(id);
-        ProductDto productDto = new ProductDto();
-        BeanUtils.copyProperties(product.get(), productDto);
-        cartDto.addProduct(productDto);
+    @Autowired
+    private IProductService  iProductService;
 
-        return "redirect:/cart";
+    @GetMapping
+    public ModelAndView showListPage(Model model,@CookieValue(value = "idProduct",defaultValue = "-1") Integer idProduct){
+        if (idProduct != -1){
+            model.addAttribute("historyProduct",iProductService.findById(idProduct).get());
+        }
+        return new ModelAndView("views/product/list","productList",iProductService.findAll());
     }
 
-    @GetMapping("/details/{id}")
-    public String details(@PathVariable Long id, Model model, HttpServletResponse response) {
-        Cookie cookie = new Cookie("idProduct", String.valueOf(id));
-        cookie.setMaxAge(60);
+    @GetMapping("/detail/{id}")
+    public ModelAndView showDetail(@PathVariable Integer id, HttpServletResponse response){
+        Cookie cookie = new Cookie("idProduct",String.valueOf(id));
+        cookie.setMaxAge(30);
         cookie.setPath("/");
         response.addCookie(cookie);
 
-        Optional<Product> product = productService.finById(id);
-        if (product.isPresent()) {
-            ProductDto productDto = new ProductDto();
-            BeanUtils.copyProperties(product.get(), productDto);
-            model.addAttribute("product", productDto);
-        }
-        return "views/details";
+        return new ModelAndView("views/product/detail","product",iProductService.findById(id).get());
     }
 
-    @GetMapping
-    public String listProduct(Model model, @CookieValue(value = "idProduct", defaultValue = "-1")
-            Long id) {
-
-        Optional<Product> product = productService.finById(id);
-        if (product.isPresent()) {
+    @GetMapping("/add/{id}")
+    public String addToCart(@PathVariable Integer id,@SessionAttribute("cart") CartDto cart){
+        Optional<Product> productDetail = iProductService.findById(id);
+        if (productDetail.isPresent()){
             ProductDto productDto = new ProductDto();
-            BeanUtils.copyProperties(product.get(), productDto);
-            model.addAttribute("historyProduct", productDto);
+            BeanUtils.copyProperties(productDetail.get(),productDto);
+            cart.addProduct(productDto);
         }
-
-        model.addAttribute("products", productService.finAll());
-        return "views/list";
+        return "redirect:/cart";
     }
 
+    @GetMapping("/decrease/{id}")
+    public String decreaseToCart(@PathVariable Integer id,@SessionAttribute("cart") CartDto cart){
+        Optional<Product> productDetail = iProductService.findById(id);
+        if (productDetail.isPresent()){
+            ProductDto productDto = new ProductDto();
+            BeanUtils.copyProperties(productDetail.get(),productDto);
+            cart.decreaseProduct(productDto);
+        }
+        return "redirect:/cart";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteToCart(@PathVariable Integer id,@SessionAttribute("cart") CartDto cart){
+        Optional<Product> productDetail = iProductService.findById(id);
+        if (productDetail.isPresent()){
+            ProductDto productDto = new ProductDto();
+            BeanUtils.copyProperties(productDetail.get(),productDto);
+            cart.remove(productDto);
+        }
+        return "redirect:/cart";
+    }
 }

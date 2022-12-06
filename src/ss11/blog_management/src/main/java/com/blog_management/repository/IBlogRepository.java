@@ -11,6 +11,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface IBlogRepository extends JpaRepository<Blog, Integer> {
+
     @Query(value = "select * from Blog where title like %:keyword% limit :offset,:limit", nativeQuery = true)
     List<Blog> findByTitleContaining(@Param("keyword") String keyword,
                                      @Param("offset") int offset,
@@ -27,5 +28,7 @@ public interface IBlogRepository extends JpaRepository<Blog, Integer> {
     Page<Blog> findByTitleAndCategory(@Param("title") String title, @Param("category") String category, Pageable pageable);
 
     List<Blog> findByCategory(Category categoryId);
+    @Query(value = "select * from Blog", nativeQuery = true)
+    Page<Blog> findPageable(Pageable pageable);
 
 }

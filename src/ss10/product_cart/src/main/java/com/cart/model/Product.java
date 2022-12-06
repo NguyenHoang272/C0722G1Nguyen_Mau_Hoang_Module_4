@@ -5,35 +5,29 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import javax.persistence.*;
+
 @Entity
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+    private int id;
     private String name;
+    @Column(columnDefinition = "TEXT")
+    private String image;
+    @Column(columnDefinition = "TEXT")
     private String description;
-    private String imageUrl;
-    private long price;
-    private short discount;
+    private double price;
+    private int discount;
 
     public Product() {
     }
 
-    public Product(Long id, String name, String description, String imageUrl, long price, short discount) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.imageUrl = imageUrl;
-        this.price = price;
-        this.discount = discount;
-    }
-
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -45,6 +39,14 @@ public class Product {
         this.name = name;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     public String getDescription() {
         return description;
     }
@@ -53,27 +55,19 @@ public class Product {
         this.description = description;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
-    public long getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(long price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
-    public short getDiscount() {
+    public int getDiscount() {
         return discount;
     }
 
-    public void setDiscount(short discount) {
+    public void setDiscount(int discount) {
         this.discount = discount;
     }
 }

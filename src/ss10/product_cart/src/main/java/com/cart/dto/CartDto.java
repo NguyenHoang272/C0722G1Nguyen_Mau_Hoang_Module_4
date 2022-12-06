@@ -1,54 +1,51 @@
 package com.cart.dto;
 
-import com.cart.model.Product;
-
 import java.util.HashMap;
 import java.util.Map;
 
 public class CartDto {
-    private Map<ProductDto, Integer> products = new HashMap<>();
+    private Map<ProductDto, Integer> productMap = new HashMap<>();
 
-    public CartDto() {
+    public CartDto(){
     }
 
-    public Map<ProductDto, Integer> getProducts() {
-        return products;
+    public Map<ProductDto,Integer> getProductMap(){
+        return productMap;
     }
 
-    public void setProducts(Map<ProductDto, Integer> products) {
-        this.products = products;
-    }
-
-    public CartDto(Map<ProductDto, Integer> products) {
-        this.products = products;
+    public void setProductMap(Map<ProductDto,Integer> productMap){
+        this.productMap = productMap;
     }
 
     public void addProduct(ProductDto productDto){
-        if(products.containsKey(productDto)){
-            Integer currentValue = products.get(productDto);
-            products.replace(productDto, currentValue + 1);
+        if (productMap.containsKey(productDto)){
+            Integer currentValue = productMap.get(productDto);
+            productMap.replace(productDto,currentValue + 1);
         }else {
-            products.put(productDto, 1);
+            productMap.put(productDto,1);
         }
     }
 
-
-    public long getTotalPrice() {
-        long totalPrice = 0;
-        for (Map.Entry<ProductDto, Integer> entry : products.entrySet()) {
-            totalPrice += entry.getKey().getPrice() * entry.getValue();
-        }
-        return totalPrice;
-    }
-
-    public void removeProduct(Long id){
-        for (Map.Entry<ProductDto, Integer> entry : products.entrySet()) {
-            if(entry.getKey().getId().equals(id)){
-                products.remove(entry.getKey());
+    public void decreaseProduct(ProductDto productDto){
+        if (productMap.containsKey(productDto)){
+            Integer currentValue = productMap.get(productDto);
+            if (currentValue > 1){
+                productMap.replace(productDto,currentValue - 1);
+            }else {
+                productMap.remove(productDto);
             }
         }
-
-
     }
 
+    public Double countTotalPayment(){
+        double payment = 0;
+        for (Map.Entry<ProductDto,Integer> entry : productMap.entrySet()){
+            payment += entry.getKey().getPrice() * (double)entry.getValue();
+        }
+        return payment;
+    }
+
+    public void remove(ProductDto productDto){
+        productMap.remove(productDto);
+    }
 }

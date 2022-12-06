@@ -67,6 +67,9 @@
     </tbody>
 </table>
 
+<button class="btn btn-outline-primary" type="button" id="more">Show more</button>
+<button class="btn btn-outline-primary" type="button" id="less">Show less</button>
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
@@ -85,78 +88,87 @@
 </script>
 
 <script>
-    $("#save").click(function () {
-        //lay du lieu
-        let title = $('#title').val();
-        let author = $('#author').val();
-        let time = $('#time').val();
-        let body = $('#body').val();
-        let category = $('#category').val();
-        let blog = {
-            title: title,
-            author: author,
-            time: time,
-            body:body,
-            category:category
-        };
-        // goi ajax
-        $.ajax({
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            type: "POST",
-            data: JSON.stringify(blog),
-            //tên API
-            url: "http://localhost:8080/api/blogs/create",
-            //xử lý khi thành công
-            success: function () {
-                $.ajax({
-                    url: 'http://localhost:8080/api/blogs',
-                    type: 'GET',
-                    dataType: 'json',
-                    success: function (data) {
-                        let myTable = "";
-                        for (let i = 0; i < data.length; i++) {
-                            myTable +=
-                                `
-                            <tr>
-                              <th scope="row " class="text-danger">${i + 1}</th>
-                              <td>${data[i].title}</td>
-                              <td>${data[i].author}</td>
-                              <td>${data[i].time}</td>
-                              <td>${data[i].body}</td>
-                              <td>${data[i].category.name}</td>
-                            </tr>
-                            `
-                        }
-                        debugger
-                        $("#myBody").empty();
-                        $("#myBody").append(myTable);
-                        $('#exampleModal').hide();
-                        $('.modal-backdrop').hide();
-                    }
-                })
-            }
-
-        });
-        //chặn sự kiện mặc định của thẻ
-        event.preventDefault();
-    })
 
     $(document).ready(function () {
-        function init() {
+        let page = 0
+        let totalPage
+
+        function checkPage() {
+            if (page === totalPage - 1) {
+                $("#more").hide()
+            } else {
+                $("#more").show()
+            }
+
+        }
+
+        $("#more").click(function () {
+            page = page + 1
+            if (page <= totalPage - 1) {
+                init();
+            }
+            checkPage()
+        })
+        $("#less").click(function () {
+            page = 0
+            $("#myBody").empty();
+            init()
+            checkPage()
+        })
+
+
+        function add() {
+        $("#save").click(function () {
+            //lay du lieu
+            let title = $('#title').val();
+            let author = $('#author').val();
+            let time = $('#time').val();
+            let body = $('#body').val();
+            let category = $('#category').val();
+            let blog = {
+                title: title,
+                author: author,
+                time: time,
+                body: body,
+                category: category
+            };
+            // goi ajax
+            $("#myBody").empty();
             $.ajax({
-                url: 'http://localhost:8080/api/blogs',
-                type: 'GET',
-                dataType: 'json',
-                success: function (data) {
-                    let myTable = "";
-                    for (let i = 0; i < data.length; i++) {
-                        myTable +=
-                            `
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                type: "POST",
+                data: JSON.stringify(blog),
+                //tên API
+                url: 'http://localhost:8080/api/blogs/create',
+                //xử lý khi thành công
+
+                success: init()
+
+            });
+            $('#exampleModal').hide();
+            $('.modal-backdrop').hide();
+            //chặn sự kiện mặc định của thẻ
+            // event.preventDefault();
+        })
+    }
+
+    function init() {
+        $.ajax({
+            url: 'http://localhost:8080/api/blogs?page=' + page,
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                console.log(data)
+                totalPage = data.totalPages
+                let myTable = "";
+                for (let i = 0; i < data.content.length; i++) {
+                    myTable +=
+                        `
                             <tr>
-                              <th scope="row " class="text-danger">${i + 1}</th>
+                              <th scope="row " class="text-danger">${(i + (data.pageable.pageNumber * data.pageable.pageSize)) + 1}</th>
                               <td>${data[i].title}</td>
                               <td>${data[i].author}</td>
                               <td>${data[i].time}</td>
@@ -164,32 +176,20 @@
                               <td>${data[i].category.name}</td>
                             </tr>
                             `
-                    }
-                    debugger
-                    $("#myBody").html(myTable);
                 }
-            })
-        }
+                // debugger
+                $("#myBody").append(myTable);
+            }
+        })
+    }
 
-        init();
-    })
+    init();
 
-    // $(document).ready(function () {
-    //     $(document).ready(function(){
-    //         $("#myInput").on("keyup", function() {
-    //             var value = $(this).val().toLowerCase();
-    //             $("#myBody tr").filter(function() {
-    //                 $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    //             });
-    //         });
-    //     });
-    //
-    // })
 
-    function search(){
+    function search() {
         let categoryId = $('#categoryId').val();
         $.ajax({
-            url: 'http://localhost:8080/api/blogs/search/'+categoryId,
+            url: 'http://localhost:8080/api/blogs/search/' + categoryId,
             type: 'GET',
             dataType: 'json',
             success: function (data) {
@@ -212,6 +212,9 @@
             }
         })
     }
+
+
+
 </script>
 
 </body>

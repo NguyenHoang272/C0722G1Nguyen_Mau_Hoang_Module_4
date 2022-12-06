@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bfe20dce-e34e-4fd5-9ccc-5604f74a3509" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../ss10/product_cart/src/main/resources/templates/views/cart/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss10/product_cart/src/main/resources/templates/views/product/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss10/product_cart/src/main/resources/templates/views/product/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10/product_cart/src/main/java/com/cart/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10/product_cart/src/main/java/com/cart/controller/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10/product_cart/src/main/java/com/cart/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10/product_cart/src/main/java/com/cart/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10/product_cart/src/main/java/com/cart/dto/CartDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10/product_cart/src/main/java/com/cart/dto/CartDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10/product_cart/src/main/java/com/cart/dto/ProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10/product_cart/src/main/java/com/cart/dto/ProductDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10/product_cart/src/main/java/com/cart/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10/product_cart/src/main/java/com/cart/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10/product_cart/src/main/java/com/cart/repository/IProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10/product_cart/src/main/java/com/cart/repository/IProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10/product_cart/src/main/java/com/cart/service/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10/product_cart/src/main/java/com/cart/service/IProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10/product_cart/src/main/java/com/cart/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10/product_cart/src/main/java/com/cart/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10/product_cart/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10/product_cart/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10/product_cart/src/main/resources/templates/views/cart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10/product_cart/src/main/resources/templates/views/details.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10/product_cart/src/main/resources/templates/views/list.html" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2IXwvkW5XogCrdELYp7v92nPYkt" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ss11/blog_management" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bfe20dce-e34e-4fd5-9ccc-5604f74a3509" name="Default Changelist" comment="" />
+      <created>1670341468920</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1670341468920</updated>
+      <workItem from="1670341470319" duration="15000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1670341483579">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1670341483579" />
+  </component>
+</project>

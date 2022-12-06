@@ -3,30 +3,21 @@ package com.cart.dto;
 import java.util.Objects;
 
 public class ProductDto {
-    private Long id;
+    private int id;
     private String name;
+    private String image;
     private String description;
-    private String imageUrl;
-    private long price;
-    private short discount;
+    private double price;
+    private int discount;
 
     public ProductDto() {
     }
 
-    public ProductDto(Long id, String name, String description, String imageUrl, long price, short discount) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.imageUrl = imageUrl;
-        this.price = price;
-        this.discount = discount;
-    }
-
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -38,6 +29,14 @@ public class ProductDto {
         this.name = name;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     public String getDescription() {
         return description;
     }
@@ -46,28 +45,25 @@ public class ProductDto {
         this.description = description;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
-    public long getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(long price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
-    public short getDiscount() {
+    public int getDiscount() {
         return discount;
     }
 
-    public void setDiscount(short discount) {
+    public void setDiscount(int discount) {
         this.discount = discount;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
     }
 
     @Override
@@ -75,11 +71,6 @@ public class ProductDto {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ProductDto that = (ProductDto) o;
-        return Objects.equals(id, that.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
+        return id == that.id;
     }
 }
