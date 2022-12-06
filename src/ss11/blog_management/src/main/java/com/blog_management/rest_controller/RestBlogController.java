@@ -1,16 +1,20 @@
 package com.blog_management.rest_controller;
 
 import com.blog_management.model.Blog;
+import com.blog_management.model.Category;
 import com.blog_management.service.blog_service.IBlogService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.print.Pageable;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/blogs")
+@CrossOrigin("*")
 public class RestBlogController {
     @Autowired
     IBlogService blogService;
@@ -25,7 +29,7 @@ public class RestBlogController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Blog> finById(@PathVariable int id) {
+    public ResponseEntity<Blog> findById(@PathVariable int id) {
         Blog blog = blogService.findById(id);
         if (blog == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -60,4 +64,14 @@ public class RestBlogController {
         blogService.remove(id);
         return new ResponseEntity<>(blog,HttpStatus.OK);
     }
+
+    @GetMapping("/search/{category_id}")
+    public ResponseEntity<List<Blog>> searchList(@PathVariable("category_id") Category categoryID) {
+        List<Blog> blogList = blogService.findByCategory(categoryID);
+        if (blogList.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(blogList, HttpStatus.OK);
+    }
+
 }

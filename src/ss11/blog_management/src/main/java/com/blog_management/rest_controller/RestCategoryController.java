@@ -16,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/categories")
+@CrossOrigin("*")
 public class RestCategoryController {
 
     @Autowired
@@ -32,14 +33,14 @@ public class RestCategoryController {
         return new ResponseEntity<>(categoryList, HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<List<Blog>> findById(@PathVariable int id){
-        List<Blog> blogList = blogService.findByCategory(id);
-        if (blogList.isEmpty()){
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(blogList, HttpStatus.OK);
-    }
+//    @GetMapping("/{id}")
+//    public ResponseEntity<List<Blog>> findById(@PathVariable int id){
+//        List<Blog> blogList = blogService.findByCategory(id);
+//        if (blogList.isEmpty()){
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//        }
+//        return new ResponseEntity<>(blogList, HttpStatus.OK);
+//    }
 
 
 }

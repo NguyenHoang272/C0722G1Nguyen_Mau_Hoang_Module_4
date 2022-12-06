@@ -1,6 +1,7 @@
 package com.blog_management.service.blog_service;
 
 import com.blog_management.model.Blog;
+import com.blog_management.model.Category;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -24,5 +25,5 @@ public interface IBlogService {
 
     Page<Blog> findByTitle(String searchTitle, Pageable pageable);
 
-    List<Blog> findByCategory(int id);
+    List<Blog> findByCategory(Category categoryId);
 }
