@@ -178,25 +178,26 @@
                             `
                     }
                     debugger
-                    $("#myBody").append(myTable);
+                    $("#myBody").html(myTable);
                 }
             })
         }
 
         init();
 
+    })
 
-        function search() {
-            let categoryId = $('#categoryId').val();
-            $.ajax({
-                url: 'http://localhost:8080/api/blogs/search/' + categoryId,
-                type: 'GET',
-                dataType: 'json',
-                success: function (data) {
-                    let myTable = "";
-                    for (let i = 0; i < data.length; i++) {
-                        myTable +=
-                            `
+    function search() {
+        let categoryId = $('#categoryId').val();
+        $.ajax({
+            url: 'http://localhost:8080/api/blogs/search/' + categoryId,
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                let myTable = "";
+                for (let i = 0; i < data.length; i++) {
+                    myTable +=
+                        `
                             <tr>
                               <th scope="row " class="text-danger">${i + 1}</th>
                               <td>${data[i].title}</td>
@@ -206,15 +207,12 @@
                               <td>${data[i].category.name}</td>
                             </tr>
                             `
-                    }
-                    debugger
-                    $("#myBody").html(myTable);
                 }
-            })
-        }
-    })
-
-
+                debugger
+                $("#myBody").html(myTable);
+            }
+        })
+    }
 
 </script>
 
