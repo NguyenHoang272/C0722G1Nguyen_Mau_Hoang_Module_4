@@ -21,14 +21,14 @@ public class RestBlogController {
     @Autowired
     IBlogService blogService;
 
-    @GetMapping
-    public ResponseEntity<List<Blog>> showList(@PageableDefault(value = 1, sort = "time", direction = Sort.Direction.DESC)
+    @GetMapping("")
+    public ResponseEntity<Page<Blog>> showList(@PageableDefault(value = 0, size = 5,sort = {"author"})
                                                            Pageable pageable) {
         Page<Blog> blogList = blogService.findPageable(pageable);
         if (blogList.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-        return new ResponseEntity<>(blogList.getContent(), HttpStatus.OK);
+        return new ResponseEntity<>(blogList, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")

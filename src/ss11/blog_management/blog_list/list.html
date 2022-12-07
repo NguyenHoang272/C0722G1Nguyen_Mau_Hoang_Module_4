@@ -118,85 +118,85 @@
 
 
         function add() {
-        $("#save").click(function () {
-            //lay du lieu
-            let title = $('#title').val();
-            let author = $('#author').val();
-            let time = $('#time').val();
-            let body = $('#body').val();
-            let category = $('#category').val();
-            let blog = {
-                title: title,
-                author: author,
-                time: time,
-                body: body,
-                category: category
-            };
-            // goi ajax
-            $("#myBody").empty();
+            $("#save").click(function () {
+                //lay du lieu
+                let title = $('#title').val();
+                let author = $('#author').val();
+                let time = $('#time').val();
+                let body = $('#body').val();
+                let category = $('#category').val();
+                let blog = {
+                    title: title,
+                    author: author,
+                    time: time,
+                    body: body,
+                    category: category
+                };
+                // goi ajax
+                $("#myBody").empty();
+                $.ajax({
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    type: "POST",
+                    data: JSON.stringify(blog),
+                    //tên API
+                    url: 'http://localhost:8080/api/blogs/create',
+                    //xử lý khi thành công
+
+                    success: init()
+
+                });
+                $('#exampleModal').hide();
+                $('.modal-backdrop').hide();
+                //chặn sự kiện mặc định của thẻ
+                // event.preventDefault();
+            })
+        }
+
+        function init() {
             $.ajax({
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                type: "POST",
-                data: JSON.stringify(blog),
-                //tên API
-                url: 'http://localhost:8080/api/blogs/create',
-                //xử lý khi thành công
-
-                success: init()
-
-            });
-            $('#exampleModal').hide();
-            $('.modal-backdrop').hide();
-            //chặn sự kiện mặc định của thẻ
-            // event.preventDefault();
-        })
-    }
-
-    function init() {
-        $.ajax({
-            url: 'http://localhost:8080/api/blogs?page=' + page,
-            type: 'GET',
-            dataType: 'json',
-            success: function (data) {
-                console.log(data)
-                totalPage = data.totalPages
-                let myTable = "";
-                for (let i = 0; i < data.content.length; i++) {
-                    myTable +=
-                        `
+                url: 'http://localhost:8080/api/blogs?page=' + page,
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    // console.log(data)
+                    totalPage = data.totalPages
+                    let myTable = "";
+                    for (let i = 0; i < data.content.length; i++) {
+                        myTable +=
+                            `
                             <tr>
                               <th scope="row " class="text-danger">${(i + (data.pageable.pageNumber * data.pageable.pageSize)) + 1}</th>
-                              <td>${data[i].title}</td>
-                              <td>${data[i].author}</td>
-                              <td>${data[i].time}</td>
-                              <td>${data[i].body}</td>
-                              <td>${data[i].category.name}</td>
+                              <td>${data.content[i].title}</td>
+                              <td>${data.content[i].author}</td>
+                              <td>${data.content[i].time}</td>
+                              <td>${data.content[i].body}</td>
+                              <td>${data.content[i].category.name}</td>
                             </tr>
                             `
+                    }
+                    debugger
+                    $("#myBody").append(myTable);
                 }
-                // debugger
-                $("#myBody").append(myTable);
-            }
-        })
-    }
+            })
+        }
 
-    init();
+        init();
 
 
-    function search() {
-        let categoryId = $('#categoryId').val();
-        $.ajax({
-            url: 'http://localhost:8080/api/blogs/search/' + categoryId,
-            type: 'GET',
-            dataType: 'json',
-            success: function (data) {
-                let myTable = "";
-                for (let i = 0; i < data.length; i++) {
-                    myTable +=
-                        `
+        function search() {
+            let categoryId = $('#categoryId').val();
+            $.ajax({
+                url: 'http://localhost:8080/api/blogs/search/' + categoryId,
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    let myTable = "";
+                    for (let i = 0; i < data.length; i++) {
+                        myTable +=
+                            `
                             <tr>
                               <th scope="row " class="text-danger">${i + 1}</th>
                               <td>${data[i].title}</td>
@@ -206,12 +206,13 @@
                               <td>${data[i].category.name}</td>
                             </tr>
                             `
+                    }
+                    debugger
+                    $("#myBody").html(myTable);
                 }
-                debugger
-                $("#myBody").html(myTable);
-            }
-        })
-    }
+            })
+        }
+    })
 
 
 

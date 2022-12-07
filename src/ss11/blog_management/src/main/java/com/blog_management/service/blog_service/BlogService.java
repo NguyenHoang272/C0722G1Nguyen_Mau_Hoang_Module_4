@@ -57,7 +57,7 @@ public class BlogService implements IBlogService {
 
     @Override
     public Page<Blog> findPageable(Pageable pageable) {
-        return findPageable(pageable);
+        return blogRepository.findPageable(pageable);
     }
 
 
