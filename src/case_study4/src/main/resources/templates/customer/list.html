@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>STT</th>
+        <th>Customer Type</th>
+        <th>Name</th>
+        <th>Date of birth</th>
+        <th>Gender</th>
+        <th>ID Card</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+
+    <tbody>
+        <tr th:each="customer , status: ${customers}">
+            <td th:text="${status.count}"></td>
+            <td th:text="${customer.customerTypeId.name}"></td>
+            <td th:text="${customer.getName()}"></td>
+            <td th:text="${customer.getDateOfBirth()"></td>
+
+            <td>
+                <p th:if="${customer.gender == 0}">Female </p>
+                <p th:if="${customer.gender == 1}">Male </p>
+                <p th:if="${customer.gender == 2}">LGBT </p>
+            </td>
+            <td th:text="${customer.getIdCard()}"></td>
+            <td th:text="${customer.phoneNumber()}"></td>
+            <td th:text="${customer.getEmail()}"></td>
+            <td th:text="${customer.getAddress()}"></td>
+            <td>Edit</td>
+            <td>
+                <button type="button" th:onclick="|getIdToDelete('${blog.id}')|" class="btn btn-primary"
+                        data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    DELETE
+                </button>
+                Delete
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="#" th:action="@{/blog/delete}" novalidate="novalidate">
+                    <p>Do you want to delete :</p>
+                    <div>
+                        <div class="input-group flex-nowrap">
+                            <span class="input-group-text" id="addon-wrapping1">Id</span>
+                            <input type="text" readonly class="form-control" id="idDelete" name="id">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">CLOSE</button>
+                        <button type="submit" class="btn btn-outline-danger">DELETE</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // <%--    thêm value cho thẻ input--%>
+    function getIdToDelete(id, name) {
+        document.getElementById("idDelete").value = id;
+        document.getElementById("nameDelete").value = name;
+    }
+</script>
+</body>
+</html>
