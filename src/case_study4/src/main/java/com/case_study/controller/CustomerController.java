@@ -1,19 +1,23 @@
 package com.case_study.controller;
 
+import com.case_study.dto.CustomerDTO;
 import com.case_study.model.CustomerType;
 import com.case_study.service.customer.ICustomerService;
 import com.case_study.service.customer.ICustomerTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
-
+@Controller
+@RequestMapping("customers")
 public class CustomerController {
     @Autowired
     private ICustomerService customerService;
@@ -43,5 +47,12 @@ public ModelAndView customerList(@RequestParam (value = "nameSearch", defaultVal
         customerService.delete(id);
         redirectAttributes.addFlashAttribute("message", "Delete customer successfully!");
         return "redirect:/customers";
+    }
+
+    @GetMapping("create")
+    public ModelAndView showForm(){
+        ModelAndView modelAndView = new ModelAndView("customer/create");
+        modelAndView.addObject("customerDTO", new CustomerDTO());
+        return modelAndView;
     }
 }

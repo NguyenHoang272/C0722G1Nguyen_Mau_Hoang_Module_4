@@ -11,13 +11,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
-    @Query(value = "select c.* from `customer` c inner join `customer_type` ct " +
-            "on c.customer_type_id = ct.id " +
-            "where c.name like %:name% and c.email like %:email% and ct.name like %:type% and c.delete_status= 1", nativeQuery = true)
-    Page<Customer> findByNameAndEmailAndCustomerType(@Param("name") String nameSearch,
-                                                     @Param("email") String email,
-                                                     @Param("type") String customerType,
-                                                     Pageable pageable);
+    @Query(value = "select c.* from `customer` c where c.name like %:name% and c.email like %:email% and customer_type_id like %:type% "
+            ,nativeQuery = true)
+    Page<Customer> search(@Param("name") String nameSearch,
+                          @Param("email") String email,
+                          @Param("type") String customerType,
+                          Pageable pageable);
 
     @Transactional
     @Modifying

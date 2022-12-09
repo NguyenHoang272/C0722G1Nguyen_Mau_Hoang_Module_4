@@ -19,40 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="85c471c9-108c-46dc-a16b-8c71da7f2fa2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../case_study4/src/main/java/com/case_study/controller/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study4/src/main/java/com/case_study/model/AttachFacility.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study4/src/main/java/com/case_study/model/Contract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study4/src/main/java/com/case_study/model/ContractDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study4/src/main/java/com/case_study/model/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study4/src/main/java/com/case_study/model/CustomerType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study4/src/main/java/com/case_study/model/Division.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study4/src/main/java/com/case_study/model/EducationDegree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study4/src/main/java/com/case_study/model/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study4/src/main/java/com/case_study/model/Facility.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study4/src/main/java/com/case_study/model/FacilityType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study4/src/main/java/com/case_study/model/MyUserDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study4/src/main/java/com/case_study/model/Position.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study4/src/main/java/com/case_study/model/RentType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study4/src/main/java/com/case_study/model/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study4/src/main/java/com/case_study/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study4/src/main/java/com/case_study/repository/customer/CustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study4/src/main/java/com/case_study/repository/customer/CustomerTypeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study4/src/main/java/com/case_study/service/customer/CustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study4/src/main/java/com/case_study/service/customer/CustomerTypeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study4/src/main/java/com/case_study/service/customer/ICustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study4/src/main/java/com/case_study/service/customer/ICustomerTypeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study4/src/main/resources/templates/customer/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study4/src/main/resources/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss13/codegym/src/main/java/com/codegym/controller/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss13/codegym/src/main/java/com/codegym/model/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss13/codegym/src/main/java/com/codegym/repository/ProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss13/codegym/src/main/java/com/codegym/service/IProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss13/codegym/src/main/java/com/codegym/service/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss13/codegym/src/main/resources/templates/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Tài liệu module 4/tai_lieu_trien_khai_module_4/~$-DN Case Study for Spring_v3.0.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Tài liệu module 4/tai_lieu_trien_khai_module_4/~$-DN Case Study for Spring_v3.0.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="85c471c9-108c-46dc-a16b-8c71da7f2fa2" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,7 +59,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../case_study4" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -126,6 +93,7 @@
       <workItem from="1669778790753" duration="60000" />
       <workItem from="1670222389896" duration="24000" />
       <workItem from="1670493375723" duration="1179000" />
+      <workItem from="1670549777340" duration="122000" />
     </task>
     <servers />
   </component>
@@ -153,10 +121,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="446" y="25" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1669618250558" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1670222411619">
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1670549899401">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1670222411619" />
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1670549899401" />
     <state width="1237" height="59" key="GridCell.Tab.0.bottom" timestamp="1669628206990">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

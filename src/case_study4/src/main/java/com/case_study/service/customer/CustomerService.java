@@ -18,7 +18,7 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public Page<Customer> search(String nameSearch, String email, String customerType, Pageable pageable) {
-        return customerRepository.findByNameAndEmailAndCustomerType(nameSearch, customerType, email, pageable);
+        return customerRepository.search(nameSearch, email, customerType, pageable);
     }
 
     @Override
