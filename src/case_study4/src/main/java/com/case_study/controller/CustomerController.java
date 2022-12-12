@@ -17,6 +17,8 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
+import java.util.Optional;
+
 @Controller
 @RequestMapping("customers")
 public class CustomerController {
@@ -73,6 +75,32 @@ public ModelAndView customerList(@RequestParam (value = "nameSearch", defaultVal
         ModelAndView modelAndView = new ModelAndView("customer/create");
         modelAndView.addObject("customerDTO", customerDTO);
         modelAndView.addObject("message", "Add new Successful!");
+        return modelAndView;
+    }
+    @GetMapping("/edit/{id}")
+    public ModelAndView showFormEdit(@PathVariable int id) {
+        ModelAndView modelAndView = new ModelAndView("customer/edit");
+        Optional<Customer> customer = customerService.findCustomerByID(id);
+        CustomerDTO customerDTO = new CustomerDTO();
+        BeanUtils.copyProperties(customer.get(), customerDTO);
+        modelAndView.addObject("customerDTO", customerDTO);
+        return modelAndView;
+    }
+
+    @PostMapping("/edit")
+    public ModelAndView edit(@ModelAttribute @Validated CustomerDTO customerDTO, BindingResult bindingResult) {
+        new CustomerDTO().validate(customerDTO, bindingResult);
+        if (bindingResult.hasFieldErrors()) {
+            ModelAndView modelAndView = new ModelAndView("customer/edit");
+            modelAndView.addObject("customerDTO", customerDTO);
+            return modelAndView;
+        }
+        Customer customer = new Customer();
+        BeanUtils.copyProperties(customerDTO, customer);
+        customerService.save(customer);
+        ModelAndView modelAndView = new ModelAndView("customer/edit");
+        modelAndView.addObject("customerDTO", customerDTO);
+        modelAndView.addObject("message", "Customer edited successfully");
         return modelAndView;
     }
 }
