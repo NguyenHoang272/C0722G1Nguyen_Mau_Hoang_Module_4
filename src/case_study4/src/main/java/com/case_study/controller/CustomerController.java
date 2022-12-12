@@ -53,7 +53,7 @@ public ModelAndView customerList(@RequestParam (value = "nameSearch", defaultVal
     }
 
     @GetMapping("create")
-    public ModelAndView showForm(){
+    public ModelAndView showCreate(){
         ModelAndView modelAndView = new ModelAndView("customer/create");
         modelAndView.addObject("customerDTO", new CustomerDTO());
         return modelAndView;
@@ -78,7 +78,7 @@ public ModelAndView customerList(@RequestParam (value = "nameSearch", defaultVal
         return modelAndView;
     }
     @GetMapping("/edit/{id}")
-    public ModelAndView showFormEdit(@PathVariable int id) {
+    public ModelAndView showEdit(@PathVariable int id) {
         ModelAndView modelAndView = new ModelAndView("customer/edit");
         Optional<Customer> customer = customerService.findCustomerByID(id);
         CustomerDTO customerDTO = new CustomerDTO();

@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
-    @Query(value = "select c.* from `customer` c where c.name like %:name% and c.email like %:email% and customer_type_id like %:type% "
+    @Query(value = "select c.* from `customer` c where c.delete_status = 1 and c.name like %:name% and c.email like %:email% and customer_type_id like %:type% "
             ,nativeQuery = true)
     Page<Customer> search(@Param("name") String nameSearch,
                           @Param("email") String email,
