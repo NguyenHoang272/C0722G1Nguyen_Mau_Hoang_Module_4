@@ -14,7 +14,6 @@ public class FacilityDTO implements Validator {
     private String name;
     private int area;
     private double cost;
-    @NotBlank(message = "Not empty")
     private int maxPeople;
     private String standardRoom;
     @NotBlank(message = "Not empty")

@@ -166,7 +166,9 @@
         <td th:text="${facility.rentTypeId.name}"></td>
         <td th:text="${facility.facilityTypeId.name}"></td>
 
-        <td><a class="btn btn-danger">Edit</a></td>
+        <td><a class="btn btn-danger"
+               th:href="@{/facility/edit/__${facility.id}__/__${facility.facilityTypeId.id}__}">Edit</a>
+        </td>
         <td>
             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete"
                     th:attr="onclick=|infoDelete('${facility.id}', '${facility.name}')|">
