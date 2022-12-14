@@ -10,19 +10,15 @@ import javax.validation.constraints.NotBlank;
 
 public class FacilityDTO implements Validator {
     private int id;
-    @NotBlank(message = "Not empty")
     private String name;
     private int area;
     private double cost;
     private int maxPeople;
     private String standardRoom;
-    @NotBlank(message = "Not empty")
     private String descriptionOtherConvenience;
     private double poolArea;
     private int numberFloors;
-    @NotBlank(message = "Not empty")
     private String facilityFree;
-    @Column(columnDefinition = "int default 1")
     private int deleteStatus = 1;
     private RentType rentTypeId;
     private FacilityType facilityTypeId;
@@ -158,24 +154,5 @@ public class FacilityDTO implements Validator {
     @Override
     public void validate(Object target, Errors errors) {
         FacilityDTO facilityDTO = (FacilityDTO) target;
-        if (!facilityDTO.name.matches("^\\p{Lu}\\p{Ll}+(\\s\\p{Lu}\\p{Ll}+)*$")) {
-            errors.rejectValue("name", "name.errors", "Name not format! Name not number!");
-        }
-        if (facilityDTO.area <= 0) {
-            errors.rejectValue("area", "area.errors", "Area not format");
-        }
-        if (facilityDTO.cost <= 0) {
-            errors.rejectValue("cost", "cost.errors", "Cost not format");
-        }
-        if (facilityDTO.maxPeople <= 0) {
-            errors.rejectValue("maxPeople", "maxPeople.errors", "MaxPeople not format");
-        }
-        if (facilityDTO.poolArea <= 0) {
-            errors.rejectValue("poolArea", "poolArea.errors", "PoolArea not format");
-        }
-        if (facilityDTO.numberFloors <= 0) {
-            errors.rejectValue("numberFloors", "numberFloors.errors", "NumberFloors not format");
-        }
-
     }
 }

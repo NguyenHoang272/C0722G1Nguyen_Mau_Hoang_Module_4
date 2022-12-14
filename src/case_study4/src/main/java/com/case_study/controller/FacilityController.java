@@ -68,27 +68,22 @@ public class FacilityController {
     public ModelAndView create(@ModelAttribute @Validated FacilityDTO facilityDTO, BindingResult bindingResult) {
         new FacilityDTO().validate(facilityDTO, bindingResult);
         System.out.println(bindingResult);
-        if (bindingResult.hasFieldErrors() && bindingResult.getErrorCount() > 2) {
+        if (bindingResult.hasErrors()) {
             ModelAndView modelAndView = new ModelAndView("facility/create");
             modelAndView.addObject("facilityType", facilityDTO.getFacilityTypeId());
             modelAndView.addObject("message", "Add not Successful");
             modelAndView.addObject("facilityDTO", facilityDTO);
             return modelAndView;
-        } else if (bindingResult.getErrorCount() == 1 || (bindingResult.getErrorCount() == 2 && !facilityDTO.getFacilityFree().equals(""))) {
-            ModelAndView modelAndView = new ModelAndView("facility/create");
-            modelAndView.addObject("facilityType", facilityDTO.getFacilityTypeId());
-            modelAndView.addObject("facilityDTO", facilityDTO);
-            modelAndView.addObject("message", "Add new Successful");
-            Facility facility = new Facility();
-            BeanUtils.copyProperties(facilityDTO, facility);
-            facilityService.save(facility);
-            return modelAndView;
         }
         ModelAndView modelAndView = new ModelAndView("facility/create");
         modelAndView.addObject("facilityType", facilityDTO.getFacilityTypeId());
         modelAndView.addObject("facilityDTO", facilityDTO);
-        modelAndView.addObject("message", "Add not Successful");
+        modelAndView.addObject("message", "Add new Successful");
+        Facility facility = new Facility();
+        BeanUtils.copyProperties(facilityDTO, facility);
+        facilityService.save(facility);
         return modelAndView;
+
     }
 
     @GetMapping("/edit/{id}/{facilityType}")
@@ -106,26 +101,21 @@ public class FacilityController {
     public ModelAndView edit(@ModelAttribute @Validated FacilityDTO facilityDTO, BindingResult bindingResult) {
         new FacilityDTO().validate(facilityDTO, bindingResult);
         System.out.println(bindingResult);
-        if (bindingResult.hasFieldErrors() && bindingResult.getErrorCount() > 2) {
+        if (bindingResult.hasErrors()) {
             ModelAndView modelAndView = new ModelAndView("facility/edit");
             modelAndView.addObject("facilityType", facilityDTO.getFacilityTypeId());
             modelAndView.addObject("message", "Update not Successful");
             modelAndView.addObject("facilityDTO", facilityDTO);
             return modelAndView;
-        } else if (bindingResult.getErrorCount() == 1 || (bindingResult.getErrorCount() == 2 && !facilityDTO.getFacilityFree().equals(""))) {
-            ModelAndView modelAndView = new ModelAndView("facility/edit");
-            modelAndView.addObject("facilityType", facilityDTO.getFacilityTypeId());
-            modelAndView.addObject("facilityDTO", facilityDTO);
-            modelAndView.addObject("message", "Update new Successful");
-            Facility facility = new Facility();
-            BeanUtils.copyProperties(facilityDTO, facility);
-            facilityService.save(facility);
-            return modelAndView;
         }
-        ModelAndView modelAndView = new ModelAndView("facility/create");
+        ModelAndView modelAndView = new ModelAndView("facility/edit");
         modelAndView.addObject("facilityType", facilityDTO.getFacilityTypeId());
         modelAndView.addObject("facilityDTO", facilityDTO);
-        modelAndView.addObject("message", "Update not Successful");
+        modelAndView.addObject("message", "Update new Successful");
+        Facility facility = new Facility();
+        BeanUtils.copyProperties(facilityDTO, facility);
+        facilityService.save(facility);
         return modelAndView;
+
     }
 }

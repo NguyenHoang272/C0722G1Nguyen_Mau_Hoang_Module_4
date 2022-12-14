@@ -40,10 +40,6 @@ public class Employee {
     @JoinColumn(name = "education_degree_id",referencedColumnName = "id")
     private EducationDegree educationDegreeId;
 
-    @OneToOne(cascade = CascadeType.REMOVE)
-    @JsonBackReference
-    @JoinColumn(name = "user_name", referencedColumnName = "username")
-    private User user;
 
     @OneToMany(mappedBy = "employeeId")
     @JsonBackReference
@@ -52,7 +48,7 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(int id, String name, String dateOfBirth, String idCard, double salary, String phoneNumber, String email, String address, int deleteStatus, Position positionId, Division divisionId, EducationDegree educationDegreeId, User user, Set<Contract> contracts) {
+    public Employee(int id, String name, String dateOfBirth, String idCard, double salary, String phoneNumber, String email, String address, int deleteStatus, Position positionId, Division divisionId, EducationDegree educationDegreeId, Set<Contract> contracts) {
         this.id = id;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
@@ -65,7 +61,6 @@ public class Employee {
         this.positionId = positionId;
         this.divisionId = divisionId;
         this.educationDegreeId = educationDegreeId;
-        this.user = user;
         this.contracts = contracts;
     }
 
@@ -165,14 +160,6 @@ public class Employee {
         this.educationDegreeId = educationDegreeId;
     }
 
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 
     public Set<Contract> getContracts() {
         return contracts;
